@@ -1,17 +1,19 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { ComponentProps, useEffect, useState } from 'react';
 import { Button } from './button';
-import { ComponentProps, useState, useEffect } from 'react';
 
 type CheckBoxProps = Omit<ComponentProps<'button'>, 'onClick'> & {
   initialChecked?: boolean;
   onValueChange?: (isChecked: boolean) => void;
+  isEditable?: boolean;
 };
 
 export function CheckBox({
   initialChecked = false,
   onValueChange,
+  isEditable = true,
   ...props
 }: CheckBoxProps) {
   const [isChecked, setIsChecked] = useState<boolean>(initialChecked);
@@ -23,6 +25,9 @@ export function CheckBox({
   }, [isChecked, onValueChange]);
 
   const handleClick = () => {
+    if (!isEditable) {
+      return;
+    }
     setIsChecked(prev => !prev);
   };
 
@@ -33,8 +38,8 @@ export function CheckBox({
       className={cn(
         'h-5 w-5 rounded-full transition-colors',
         isChecked
-          ? 'border-none bg-cmc_gray-4'
-          : 'border-[#898F9F] bg-transparent'
+          ? 'border-none bg-gray-100 hover:bg-gray-100'
+          : 'border-[#898F9F] bg-transparent hover:bg-transparent'
       )}
       onClick={handleClick}
       {...props}

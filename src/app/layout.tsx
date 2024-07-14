@@ -1,8 +1,8 @@
-import React from 'react';
-import LocalFont from 'next/font/local';
-import type { Metadata } from 'next';
-import './globals.css';
 import { Header } from '@/components/header';
+import type { Metadata } from 'next';
+import LocalFont from 'next/font/local';
+import React from 'react';
+import './globals.css';
 
 const pretendard = LocalFont({
   src: '../../public/fonts/PretendardVariable.woff2',
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" suppressHydrationWarning>
       <body className={pretendard.className}>
         <Header />
         {children}

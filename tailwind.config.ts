@@ -19,15 +19,24 @@ const config = {
     },
     extend: {
       colors: {
-        cmc_gray: {
-          1: '#0F1114',
-          2: '#51586C',
-          3: '#9FA5B7',
-          4: '#D9DCE2',
-          5: '#F6F7F8',
+        gray: {
+          '50': '#f6f7f8',
+          '75': '#e9eaee',
+          '100': '#d9dce2',
+          '200': '#bcc1cd',
+          '300': '#9fa5b7',
+          '400': '#828aa1',
+          '500': '#677089',
+          '600': '#51586c',
+          '700': '#3b404e',
+          '800': '#252931',
+          '900': '#0f1114',
         },
-        secondary1: 'hsl(214.1, 50.5%, 19%)',
-        secondary2: 'hsl(226.2, 100%, 95.7%)',
+        sub: {
+          1: '#1b2166',
+          2: '#e9efff',
+          3: '#f4f7ff',
+        },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
