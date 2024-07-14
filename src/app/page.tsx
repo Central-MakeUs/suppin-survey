@@ -4,7 +4,7 @@ import { UserInfoForm } from '@/components/user-info-form';
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen w-full flex-col gap-2.5 bg-secondary2 p-5">
+    <div className="bg-sub-2 flex min-h-screen w-full flex-col gap-2.5 p-5">
       <Intro />
       <Policy />
       <UserInfoForm />

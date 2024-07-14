@@ -7,7 +7,7 @@ export function Box({ className, children }: BoxProps) {
   return (
     <div
       className={cn(
-        'bg-cmc_gray-5 rounded-[10px] border border-solid border-[#E9EAEE] px-3.5 py-3',
+        'rounded-[10px] border border-solid border-[#E9EAEE] bg-gray-50 px-3.5 py-3',
         className
       )}
     >
