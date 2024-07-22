@@ -7,7 +7,7 @@ type CheckBoxProps = Omit<ComponentProps<'button'>, 'onClick'> & {
   isChecked: boolean;
 };
 
-export function CheckBox({ isChecked, ...props }: CheckBoxProps) {
+export function CheckBox({ isChecked, className, ...props }: CheckBoxProps) {
   return (
     <Button
       variant="outline"
@@ -16,7 +16,8 @@ export function CheckBox({ isChecked, ...props }: CheckBoxProps) {
         'h-5 w-5 rounded-full transition-colors',
         isChecked
           ? 'border-none bg-primary hover:bg-primary'
-          : 'border-[#898F9F] bg-transparent hover:bg-transparent'
+          : 'border-[#898F9F] bg-transparent hover:bg-transparent',
+        className
       )}
       {...props}
     >

@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { Badge } from './ui/badge';
-import { Button } from './ui/button';
 import { Card } from './ui/card';
 import {
   Form,
@@ -38,13 +37,13 @@ export function UserInfoForm() {
   };
 
   return (
-    <div className="flex flex-col gap-4 pb-14">
+    <div className="flex flex-col gap-4">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(submitHandler)}
           className="flex flex-col gap-6"
         >
-          <Card className="flex flex-col gap-4 pb-14">
+          <Card className="flex flex-col gap-4 pb-6">
             <Badge>개인정보 수집</Badge>
             <div className="flex flex-col gap-2.5">
               <FormLabel className="body1 text-gray-500">
@@ -114,13 +113,6 @@ export function UserInfoForm() {
               />
             </div>
           </Card>
-          <Button
-            type="submit"
-            variant="default"
-            className="head3 flex h-12 items-center justify-center rounded-[10px] text-white hover:bg-primary hover:opacity-90"
-          >
-            설문 제출하기
-          </Button>
         </form>
       </Form>
     </div>
