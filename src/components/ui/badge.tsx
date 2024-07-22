@@ -10,7 +10,7 @@ const badgeVariants = cva(
         primary: 'bg-sub-2 text-primary',
       },
       size: {
-        md: 'h-[2rem] w-[5.5rem]',
+        md: 'h-[2rem] w-fit',
       },
     },
     defaultVariants: {
