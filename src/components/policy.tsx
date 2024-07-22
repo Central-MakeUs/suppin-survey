@@ -1,7 +1,6 @@
+import { SelectBox } from './select-box';
 import { Badge } from './ui/badge';
-import { Box } from './ui/box';
 import { Card } from './ui/card';
-import { CheckBox } from './ui/check-box';
 import { Paragraph } from './ui/paragraph';
 
 export function Policy() {
@@ -14,10 +13,7 @@ export function Policy() {
         praesentium debitis, fugiat cupiditate aut tempora eligendi quasi
         aperiam, hic nihil veniam!
       </Paragraph>
-      <Box className="flex w-full items-center gap-3 md:w-[8.25rem]">
-        <CheckBox initialChecked={false} />
-        <span className="body3 text-[#3B404E]">동의합니다.</span>
-      </Box>
+      <SelectBox />
     </Card>
   );
 }

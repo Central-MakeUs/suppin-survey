@@ -1,36 +1,13 @@
-'use client';
-
 import { cn } from '@/lib/utils';
-import { ComponentProps, useEffect, useState } from 'react';
+import Image from 'next/image';
+import { ComponentProps } from 'react';
 import { Button } from './button';
 
 type CheckBoxProps = Omit<ComponentProps<'button'>, 'onClick'> & {
-  initialChecked?: boolean;
-  onValueChange?: (isChecked: boolean) => void;
-  isEditable?: boolean;
+  isChecked: boolean;
 };
 
-export function CheckBox({
-  initialChecked = false,
-  onValueChange,
-  isEditable = true,
-  ...props
-}: CheckBoxProps) {
-  const [isChecked, setIsChecked] = useState<boolean>(initialChecked);
-
-  useEffect(() => {
-    if (onValueChange) {
-      onValueChange(isChecked);
-    }
-  }, [isChecked, onValueChange]);
-
-  const handleClick = () => {
-    if (!isEditable) {
-      return;
-    }
-    setIsChecked(prev => !prev);
-  };
-
+export function CheckBox({ isChecked, ...props }: CheckBoxProps) {
   return (
     <Button
       variant="outline"
@@ -38,11 +15,14 @@ export function CheckBox({
       className={cn(
         'h-5 w-5 rounded-full transition-colors',
         isChecked
-          ? 'border-none bg-gray-100 hover:bg-gray-100'
+          ? 'border-none bg-primary hover:bg-primary'
           : 'border-[#898F9F] bg-transparent hover:bg-transparent'
       )}
-      onClick={handleClick}
       {...props}
-    />
+    >
+      {isChecked ? (
+        <Image src="/check.svg" alt="check" width={10} height={10} />
+      ) : null}
+    </Button>
   );
 }
