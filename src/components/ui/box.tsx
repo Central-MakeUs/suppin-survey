@@ -1,19 +1,16 @@
 import { cn } from '@/lib/utils';
 import { ComponentProps } from 'react';
 
-type BoxProps = ComponentProps<'div'> & {
-  isActive?: boolean;
-};
+type BoxProps = ComponentProps<'div'>;
 
-export function Box({ className, children, isActive, onClick }: BoxProps) {
+export function Box({ className, children, ...props }: BoxProps) {
   return (
     <div
       className={cn(
-        'rounded-[10px] border border-solid px-3.5 py-3',
-        isActive ? 'border-primary bg-sub-2' : 'border-gray-75 bg-gray-50',
+        'border-gray-6 flex flex-col gap-5 rounded-[10px] border border-solid bg-white p-5 shadow-[0px_0px_4px_0px_#00000040]',
         className
       )}
-      onClick={onClick}
+      {...props}
     >
       {children}
     </div>

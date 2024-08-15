@@ -1,6 +1,8 @@
+import { SurveyType } from '@/types/survey';
+
 const BASE_URL = 'http://api.suppin.store/api/v1';
 
-export const getSurvey = async (uuid: string) => {
+export const getSurvey = async (uuid: string): Promise<SurveyType> => {
   try {
     const res = await fetch(`${BASE_URL}/survey/view?uuid=${uuid}`, {
       method: 'GET',
@@ -15,5 +17,6 @@ export const getSurvey = async (uuid: string) => {
     return res.json();
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
